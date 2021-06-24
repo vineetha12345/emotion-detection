@@ -1,0 +1,155 @@
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <title>Main Page</title>
+<style>
+.container {
+  width:100%;
+  color: black;
+  min-width:20%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container1{
+  width:100%;
+  color: black;
+  min-width:20%;
+  padding-left:5vw;
+  padding-right:10vw;
+}
+.manually {
+  top: 360px;
+  left: 300px;
+  max-width:100%;
+}
+.mySlides {
+  display: none;
+  max-width:100%;
+}
+.leftpane {
+    width: 40%;
+    height: 100%;
+    float: left;
+    border-collapse: collapse;
+}
+
+.middlepane {
+    width: 30%;
+    height: 100%;
+    top:10vw;
+    left:5vw;
+    padding-top:8vw;
+    float: left;
+}
+
+.rightpane {
+  width: 30%;
+  height: 100%;
+  position: relative;
+  float: right;
+  top:5vw;
+  left:5vw;
+  padding-top:3vw;
+  padding-left: 5vw;
+}
+
+.button {
+      background-color: #03506F;
+      color: white;
+      padding: 1vw 6.5vw;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1vw;
+      cursor: pointer;
+    font-style: italic;
+    align:center
+  }
+  .button1 {
+        background-color: #03506F;
+        color: white;
+        padding: 1vw 6vw;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1vw;
+        cursor: pointer;
+      font-style: italic;
+    }
+.b {
+  top:5vw;
+  left:5vw;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+body {
+  background-image: url("../static/mainbackground.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+  <img src="./static/main.png" style="width:100%;height:auto;">
+</div>
+<div class="container1">
+<div class="row">
+<div class="leftpane">
+      <p class="b" style="font-size: 3vw;font-style:italic;width:100%;height:auto;" >Do you wanna know your Emotion !</p>
+      <div class="SLIDESHOW" >
+        <img class="mySlides"
+          src="./static/happy.png"style="width:65%;height:auto;">
+        <img class="mySlides"
+          src="./static/sad.png"style="width:65%;height:auto;">
+        <img class="mySlides"
+          src="./static/neutral.png"style="width:65%;height:auto;">
+        <img class="mySlides"
+          src="./static/surprise.png"style="width:65%;height:auto;">
+        <img class="mySlides"
+          src="./static/angry.png"style="width:65%;height:auto;">
+      </div>
+    </div>
+    <div class="middlepane">
+      <p class="b" style="font-size: 1.5vw;width:100%;height:auto;" >Upload images from system or images fetched from url</p>
+      <img src="./static/manuallyupload.png" style="width:100%;height:auto;">
+      <form action="/uploadmanually" method="post">
+      <input type="submit" name="Manually Upload Image" value="Manually Upload Image" class="button"/>
+      </form>
+    </div>
+    <div class="rightpane">
+      <p class="b" style="font-size: 1.5vw;width:100%;height:auto;" >Detect your emotion using the webcam</p>
+      <img src="./static/realtime.png" style="width:100%;height:auto;">
+      <form action="/Live" method="post">
+          <input type="submit" name="Real Time Image" value="Real Time Image" class="button" />
+      </form>
+    </div>
+    </div>
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+
+  </script>
+</body>
+</html>

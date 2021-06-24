@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>RESULT</title>
+  <style>
+.container {
+  position: relative;
+  text-align: center;
+  color:black;
+}
+.middlepane {
+    width:50%;
+    height:50%
+    position: relative;
+    float: right;
+}
+.rightpane {
+  width: 50%;
+  height:50%
+  position: relative;
+  float: right;
+}
+body {
+  background-image: url("../static/result.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+  </style>
+</head>
+<body >
+  <div class="container">
+  <div class="middlepane">
+    <p class="b" style="font-size: 1.5vw;width:100%;height:auto;color:black;padding-right:10vw;" >Original Image</p>
+  <img src="/static/{{orig}}" style="width:70%;height:70%;padding-right:10vw;">
+</div>
+<div class="rightpane">
+  <p class="b" style="font-size: 1.5vw;width:100%;height:auto;color:black;padding-left:5vw;" >Predicted Image</p>
+<img src="/static/{{pred}}" style="width:70%;height:70%;padding-left:10vw;">
+</div>
+  </div>
+</body>

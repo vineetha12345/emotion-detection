@@ -1,0 +1,53 @@
+<html>
+<head>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title> Manually Upload Image </title>
+<style>
+.container {
+  width:100%
+  min-width:20%
+position: relative;
+color:black;
+}
+
+.upload{
+  position: absolute;
+  top: 5vw;
+  left: 50vw;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background-color:white;
+color: black;
+padding: 1vw 1vw;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 1vw;
+cursor: pointer;
+font-style:italic;
+align-center;
+}
+        </style>
+    </head>
+<body>
+  <div class="container">
+  <img src="./static/upload.jpg" style="width:100%;height:100%;">
+  <div class="upload">
+    <p class="b" style="font-size: 1.5vw;width:100%;height:auto;color:white;" >Upload images from system</p>
+    <form action=/uploadimage method="POST" enctype=multipart/form-data>
+      <input type=file name=file class=button>
+             <input type=submit value=Upload_image class="button">
+    </form>
+  <p class="b" style="font-size: 1.5vw;width:100%;height:auto;color:white;" >Upload images fetched from url </p>
+    <form action=/imageurl method=post enctype=multipart/form-data>
+      <input type=url placeholder="Enter the URL" name=url class="button">
+        <input type=submit value=Upload_url class=button>
+    </form>
+    </div>
+<body/>
+<html/>
